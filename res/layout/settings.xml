@@ -89,14 +89,12 @@
 	android:weightSum="10"
 	android:background="#FF000060"
 	>
-
       <TextView
 	  android:layout_width="0dp"
 	  android:layout_height="wrap_content"
 	  android:layout_weight="8"
 	  android:text="Natural scrolling"
 	  />
-
       <CheckBox
 	  android:id="@+id/natural_scrolling"
 	  android:layout_width="0dp"
@@ -104,7 +102,6 @@
 	  android:layout_weight="2"
 	  android:visibility="visible"
 	  />
-
     </LinearLayout>
 
     <LinearLayout
@@ -116,14 +113,36 @@
 	android:weightSum="10"
 	android:background="#FF000060"
 	>
+      <TextView
+	  android:layout_width="0dp"
+	  android:layout_height="wrap_content"
+	  android:layout_weight="8"
+	  android:text="Automatic brightness reduction"
+	  />
+      <CheckBox
+	  android:id="@+id/brightness_reduction"
+	  android:layout_width="0dp"
+	  android:layout_height="wrap_content"
+	  android:layout_weight="2"
+	  android:visibility="visible"
+	  />
+    </LinearLayout>
 
+    <LinearLayout
+	android:orientation="horizontal"
+	android:layout_width="fill_parent"
+	android:layout_height="wrap_content"
+	android:layout_marginBottom="5px"
+	android:padding="10px"
+	android:weightSum="10"
+	android:background="#FF000060"
+	>
       <TextView
 	  android:layout_width="0dp"
 	  android:layout_height="wrap_content"
 	  android:layout_weight="6"
 	  android:text="Movement multiplier"
 	  />
-
       <SeekBar
 	  android:id="@+id/multiplier"
 	  android:layout_width="0dp"
@@ -133,7 +152,6 @@
 	  android:max="9"
 	  android:progress="4"
 	  />
-
     </LinearLayout>
 
   </LinearLayout>

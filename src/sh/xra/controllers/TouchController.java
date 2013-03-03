@@ -10,6 +10,9 @@ import android.content.Context;
 import android.os.Vibrator;
 
 import sh.xra.Handler;
+import sh.xra.Options;
+
+import android.view.WindowManager.LayoutParams;
 
 public class TouchController extends Controller
 {
@@ -38,6 +41,17 @@ public class TouchController extends Controller
         this.leftButton = findViewById(R.id.left_button);
         this.rightButton = findViewById(R.id.right_button);
         this.vibrator = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
+    }
+
+    public void onResume()
+    {
+        super.onResume();
+
+        if (Options.getBrightnessReduction()) {
+            LayoutParams lp = this.getWindow().getAttributes();
+            lp.screenBrightness = (float) 0.01;
+            this.getWindow().setAttributes(lp); 
+        }
     }
 
     public boolean onTouchEvent(MotionEvent event)

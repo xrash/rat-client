@@ -11,37 +11,37 @@ public final class Handler
 
     public void clickLeftButton()
     {
-        byte[] data = { 0x10, (byte)0, (byte)0, (byte)0, (byte)0 };
+        byte[] data = { 0x10 };
         UDP.send(data);
     }
 
     public void pressLeftButton()
     {
-        byte[] data = { 0x11, (byte)0, (byte)0, (byte)0, (byte)0 };
+        byte[] data = { 0x11 };
         UDP.send(data);
     }
 
     public void releaseLeftButton()
     {
-        byte[] data = { 0x12, (byte)0, (byte)0, (byte)0, (byte)0 };
+        byte[] data = { 0x12 };
         UDP.send(data);
     }
 
     public void clickRightButton()
     {
-        byte[] data = { 0x20, (byte)0, (byte)0, (byte)0, (byte)0 };
+        byte[] data = { 0x20 };
         UDP.send(data);
     }
 
     public void pressRightButton()
     {
-        byte[] data = { 0x21, (byte)0, (byte)0, (byte)0, (byte)0 };
+        byte[] data = { 0x21 };
         UDP.send(data);
     }
 
     public void releaseRightButton()
     {
-        byte[] data = { 0x22, (byte)0, (byte)0, (byte)0, (byte)0 };
+        byte[] data = { 0x22 };
         UDP.send(data);
     }
 

@@ -27,6 +27,7 @@ public class Settings extends Activity
     private ProgressBar progressBar;
     private SeekBar multiplier;
     private CheckBox naturalScrolling;
+    private CheckBox brightnessReduction;
 
     public void onCreate(Bundle savedInstanceState)
     {
@@ -38,6 +39,7 @@ public class Settings extends Activity
         this.serversList = (ListView) findViewById(R.id.servers);
         this.multiplier = (SeekBar) findViewById(R.id.multiplier);
         this.naturalScrolling = (CheckBox) findViewById(R.id.natural_scrolling);
+        this.brightnessReduction = (CheckBox) findViewById(R.id.brightness_reduction);
     }
 
     public void scanForServers(View view)
@@ -67,16 +69,18 @@ public class Settings extends Activity
         this.port.setText(String.valueOf(Options.getPort()));
         this.multiplier.setProgress(Options.getMultiplier() - 1);
         this.naturalScrolling.setChecked(Options.getNaturalScrolling());
+        this.brightnessReduction.setChecked(Options.getBrightnessReduction());
     }
 
-    public void onStop()
+    public void onPause()
     {
-        super.onStop();
+        super.onPause();
 
         Options.setHost(this.host.getText().toString());
         Options.setPort(Integer.valueOf(this.port.getText().toString()));
         Options.setMultiplier(this.multiplier.getProgress() + 1);
         Options.setNaturalScrolling(this.naturalScrolling.isChecked());
+        Options.setBrightnessReduction(this.brightnessReduction.isChecked());
 
         UDP.configure(Options.getHost(),
                       Options.getPort());
@@ -93,8 +97,7 @@ public class Settings extends Activity
             this.port = port;
         }
 
-        public void onItemClick(
-                                AdapterView parent,
+        public void onItemClick(AdapterView parent,
                                 View view,
                                 int position,
                                 long id)

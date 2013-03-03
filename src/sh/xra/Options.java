@@ -25,6 +25,17 @@ public class Options
         editor.commit();
     }
 
+    public static boolean getBrightnessReduction()
+    {
+        return Options.sharedPreferences.getBoolean("brightness_reduction", false);
+    }
+
+    public static void setBrightnessReduction(boolean brightnessReduction)
+    {
+        Options.editor.putBoolean("brightness_reduction", brightnessReduction);
+        editor.commit();
+    }
+
     public static int getMultiplier()
     {
         return Options.sharedPreferences.getInt("multiplier", 1);
