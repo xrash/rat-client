@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	      android:id="@+id/layout"
+	      android:orientation="vertical"
+	      android:layout_width="fill_parent"
+	      android:layout_height="fill_parent"
+	      android:paddingTop="15px"
+	      android:paddingBottom="15px"
+	      android:focusable="true"
+	      android:focusableInTouchMode="true"
+	      >
+
+  <LinearLayout
+      android:orientation="vertical"
+      android:layout_width="fill_parent"
+      android:layout_height="wrap_content"
+      android:layout_marginBottom="5px"
+      android:background="#FF000060"
+      android:padding="10px"
+      >
+
+    <TextView
+	android:layout_width="fill_parent"
+	android:layout_height="wrap_content"
+	android:layout_marginBottom="5px"
+	android:text="Connection"
+	/>
+
+    <EditText
+	android:id="@+id/host"
+	android:layout_width="fill_parent"
+	android:layout_height="wrap_content"
+	android:singleLine="true"
+	android:hint="host"
+	/>
+
+    <EditText
+	android:id="@+id/port"
+	android:layout_width="fill_parent"
+	android:layout_height="wrap_content"
+	android:singleLine="true"
+	android:hint="port"
+	/>
+
+    <Button
+	android:id="@+id/scan"
+	android:layout_width="fill_parent"
+	android:layout_height="wrap_content"
+	android:text="Scan for servers"
+	android:onClick="scanForServers"
+	/>
+
+    <ProgressBar
+	android:id="@+id/progress"
+	android:layout_width="fill_parent"
+	android:layout_height="wrap_content"
+	android:layout_marginTop="10px"
+	style="@android:style/Widget.ProgressBar.Horizontal"
+	android:visibility="gone"
+	android:max="100"
+	android:progress="0"
+	android:clickable="true"
+	android:onClick="cancelScan"
+	/>
+
+    <ListView
+	android:id="@+id/servers"
+	android:layout_width="match_parent"
+	android:layout_height="wrap_content"
+	android:visibility="visible"
+	/>
+
+  </LinearLayout>
+
+  <LinearLayout
+      android:orientation="vertical"
+      android:layout_width="fill_parent"
+      android:layout_height="wrap_content"
+      android:layout_marginBottom="5px"
+      >
+
+    <LinearLayout
+	android:orientation="horizontal"
+	android:layout_width="fill_parent"
+	android:layout_height="wrap_content"
+	android:layout_marginBottom="5px"
+	android:padding="10px"
+	android:weightSum="10"
+	android:background="#FF000060"
+	>
+
+      <TextView
+	  android:layout_width="0dp"
+	  android:layout_height="wrap_content"
+	  android:layout_weight="8"
+	  android:text="Natural scrolling"
+	  />
+
+      <CheckBox
+	  android:id="@+id/natural_scrolling"
+	  android:layout_width="0dp"
+	  android:layout_height="wrap_content"
+	  android:layout_weight="2"
+	  android:visibility="visible"
+	  />
+
+    </LinearLayout>
+
+    <LinearLayout
+	android:orientation="horizontal"
+	android:layout_width="fill_parent"
+	android:layout_height="wrap_content"
+	android:layout_marginBottom="5px"
+	android:padding="10px"
+	android:weightSum="10"
+	android:background="#FF000060"
+	>
+
+      <TextView
+	  android:layout_width="0dp"
+	  android:layout_height="wrap_content"
+	  android:layout_weight="6"
+	  android:text="Movement multiplier"
+	  />
+
+      <SeekBar
+	  android:id="@+id/multiplier"
+	  android:layout_width="0dp"
+	  android:layout_height="wrap_content"
+	  android:layout_weight="4"
+	  android:visibility="visible"
+	  android:max="9"
+	  android:progress="4"
+	  />
+
+    </LinearLayout>
+
+  </LinearLayout>
+
+</LinearLayout>
