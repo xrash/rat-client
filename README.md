@@ -2,9 +2,11 @@
 
 Rat transforms your phone into a touchpad. For get it working you will need a server running on your computer and a client running on your phone. This is the client for Android.
 
-Below is the protocol used:
+Plug your Android phone into your computer and enable the developer debug mode, then run:
 
-Format:
+    make install
+
+Below is the protocol used:
 
     [ byte sequence ]
         action
