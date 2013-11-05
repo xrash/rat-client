@@ -1,6 +1,8 @@
 # Rat android client
 
-This is the Rat client for android. Below is the documentation of the protocol.
+Rat transforms your phone into a touchpad. For get it working you will need a server running on your computer and a client running on your phone. This is the client for Android.
+
+Below is the protocol used:
 
 Format:
 
